@@ -1,5 +1,3 @@
-package hello;
-
 //Abstract class
 abstract class Book {
   String title;
