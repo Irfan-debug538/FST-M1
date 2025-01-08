@@ -1,5 +1,3 @@
-package hello;
-
 class CustomException extends Exception {
     private String message = null;
 
