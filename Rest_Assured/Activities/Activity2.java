@@ -25,7 +25,7 @@ public class Activity2 {
 
 		// Assertion
 		response.then().body("code", equalTo(200));
-		response.then().body("message", equalTo("1004"));
+		response.then().body("message", equalTo("1652"));
 	}
 	
 	@Test(priority=2)
@@ -36,7 +36,7 @@ public class Activity2 {
 		Response response = given()
 			.baseUri("https://petstore.swagger.io/v2/user") // Set base URI
 			.header("Content-Type", "application/json") // Set headers
-			.pathParam("username", "DRTest") // Pass request body from file
+			.pathParam("username", "Sample") // Pass request body from file
 			.when().get("/{username}"); // Send POST request
 		
 		// Get response body
@@ -54,13 +54,13 @@ public class Activity2 {
 		}
 		
 		// Assertion
-		response.then().body("id", equalTo(1004));
-		response.then().body("username", equalTo("DRTest"));
-		response.then().body("firstName", equalTo("Justin"));
+		response.then().body("id", equalTo(1652));
+		response.then().body("username", equalTo("Sample"));
+		response.then().body("firstName", equalTo("Irfan"));
 		response.then().body("lastName", equalTo("Case"));
 		response.then().body("email", equalTo("justincase@mail.com"));
 		response.then().body("password", equalTo("password123"));
-		response.then().body("phone", equalTo("9812763450"));
+		response.then().body("phone", equalTo("9982176126"));
 	}
 	
 	@Test(priority=3)
@@ -68,11 +68,11 @@ public class Activity2 {
 		Response response = given()
 			.baseUri("https://petstore.swagger.io/v2/user") // Set base URI
 			.header("Content-Type", "application/json") // Set headers
-			.pathParam("username", "DRTest") // Add path parameter
+			.pathParam("username", "Sample") // Add path parameter
 			.when().delete("/{username}"); // Send POST request
 
 		// Assertion
 		response.then().body("code", equalTo(200));
-		response.then().body("message", equalTo("DRTest"));
+		response.then().body("message", equalTo("Sample"));
 	}
 }
